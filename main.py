@@ -7,6 +7,7 @@ import requests
 import threading
 from typing import Tuple
 from datetime import datetime
+from multiprocessing import freeze_support
 
 from firebase import firebase
 from plyer import uniqueid
@@ -47,7 +48,7 @@ class MainScreen(GridLayout):
         self.firebase = firebase.FirebaseApplication('https://derdiedas-17e3e.firebaseio.com/', None)
         self._errors_file = pathlib.Path.home() / pathlib.Path(".derdiedas/errors.json")
         self._substantive_file = pathlib.Path.cwd() / pathlib.Path("substantive.json")
-        self._user_id = uniqueid.id.decode("utf-8") 
+        self._user_id = uniqueid.id
         self.color_table = COLORS_DARK
         self._build_layout()
 
@@ -177,4 +178,5 @@ class DerDieDasApp(MDApp):
 
 
 if __name__ == "__main__":
+    freeze_support()
     DerDieDasApp().run()
