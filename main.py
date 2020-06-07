@@ -45,9 +45,9 @@ class MainScreen(GridLayout):
     def __init__(self, **kwargs):
         super(MainScreen, self).__init__(**kwargs)
         self.firebase = firebase.FirebaseApplication('https://derdiedas-17e3e.firebaseio.com/', None)
-        self._errors_file = pathlib.Path.home() / pathlib.Path(".derdiedas/errors.json")
+        self._errors_file = pathlib.Path.cwd() / pathlib.Path("errors.json")
         self._substantive_file = pathlib.Path.cwd() / pathlib.Path("substantive.json")
-        self._user_id = uniqueid.id.decode("utf-8") 
+        self._user_id = uniqueid.id 
         self.color_table = COLORS_DARK
         self._build_layout()
 
