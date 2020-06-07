@@ -19,7 +19,6 @@ from kivy.uix.gridlayout import GridLayout
 from kivy.uix.floatlayout import FloatLayout
 
 from kivymd.app import MDApp
-from kivymd.toast import toast
 from kivymd.uix.label import MDLabel
 from kivymd.uix.button import MDRaisedButton, MDRoundFlatButton
 
